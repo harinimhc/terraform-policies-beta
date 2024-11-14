@@ -1,20 +1,18 @@
-policy "kms-key-rotation-enabled" {
-  source = "https://registry.terraform.io/v2/policies/harinimhc/sample-beta/1.0.0/policy/kms-key-rotation-enabled.sentinel?checksum=sha256:fe847372b2b20431cdf9ccd77d8c46b5d0cd9c934bd5783771449c1a8b1d6446"
+policy "intel-google-compute-instance-deny-unapproved-instance-types" {
+  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-deny-unapproved-instance-types.sentinel?checksum=sha256:161b2de82f46307bf0b2f529bd88936b143ce8e9f3f1dd35149ac5bc7e4ea17a"
   enforcement_level = "advisory"
 }
 
-module "tfplan-functions" {
-  source = "https://registry.terraform.io/v2/policies/harinimhc/sample-beta/1.0.0/policy-module/tfplan-functions.sentinel?checksum=sha256:9bbb1ae1ecdfe69508f9de6c701d158430601243a88269acb2c65fa5743401fb"
+policy "intel-google-compute-instance-enforce-min-cpu-platform" {
+  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-enforce-min-cpu-platform.sentinel?checksum=sha256:34e8ede99878b685b4571395499d7f8a36de96969664ca96db654fef21076295"
+  enforcement_level = "advisory"
 }
 
-module "tfconfig-functions" {
-  source = "https://registry.terraform.io/v2/policies/harinimhc/sample-beta/1.0.0/policy-module/tfconfig-functions.sentinel?checksum=sha256:af4412b799d270e9b815215443a487d7aee5954dd7174f49c99e29fe5535bcd7"
+policy "intel-google-compute-instance-template-deny-unapproved-instance-types" {
+  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-template-deny-unapproved-instance-types.sentinel?checksum=sha256:c864b73f5e7cfa97bc64f49a34d9843d57e9b26216994a1654ccb29d290e8ac2"
+  enforcement_level = "advisory"
 }
 
-module "report" {
-  source = "https://registry.terraform.io/v2/policies/harinimhc/sample-beta/1.0.0/policy-module/report.sentinel?checksum=sha256:54111b6599245a0d1e264dfa431cbdb7c4a2ed238b17b915b4d987e6c00c9c7c"
-}
-
-module "tfresources" {
-  source = "https://registry.terraform.io/v2/policies/harinimhc/sample-beta/1.0.0/policy-module/tfresources.sentinel?checksum=sha256:1e6fb1a9307339f11061e65a92b25d876a23212bf9ddf615cb6693215061bb5c"
+module "policy_summary" {
+  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy-module/policy_summary.sentinel?checksum=sha256:765fceb369ae13ddea5650576fe5fea48b0c229f9ed1cdb8a7d7ff90309e0a07"
 }
