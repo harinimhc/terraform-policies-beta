@@ -1,38 +1,22 @@
-policy "intel-google-compute-instance-deny-unapproved-instance-types" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-deny-unapproved-instance-types.sentinel?checksum=sha256:161b2de82f46307bf0b2f529bd88936b143ce8e9f3f1dd35149ac5bc7e4ea17a"
+policy "cloudtrail-bucket-access-logging-enabled" {
+  source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-CloudTrail-Terraform/1.0.1/policy/cloudtrail-bucket-access-logging-enabled.sentinel?checksum=sha256:e3478c1fccb60483c5d8f0a5aec0d2a54f29e09fd32a96db2beabbc1c412f317"
   enforcement_level = "advisory"
 }
 
-policy "intel-google-compute-instance-enforce-min-cpu-platform" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-enforce-min-cpu-platform.sentinel?checksum=sha256:34e8ede99878b685b4571395499d7f8a36de96969664ca96db654fef21076295"
+policy "cloudtrail-cloudwatch-logs-group-arn-present" {
+  source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-CloudTrail-Terraform/1.0.1/policy/cloudtrail-cloudwatch-logs-group-arn-present.sentinel?checksum=sha256:5d61e9ce2aa25e189e385096d734ad43178934ff3dabde9185d4076c51e15ba1"
   enforcement_level = "advisory"
 }
 
-policy "intel-google-container-cluster-enforce-min-cpu-platform" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-container-cluster-enforce-min-cpu-platform.sentinel?checksum=sha256:e70020abb632c5d91e9a05da35f5762a1722fb98b030bd3d58d5fc1ef8f2147c"
+policy "cloudtrail-log-file-validation-enabled" {
+  source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-CloudTrail-Terraform/1.0.1/policy/cloudtrail-log-file-validation-enabled.sentinel?checksum=sha256:2328634408f42e42d2e32ea925f9ff3d971fe3550ed661cdeb761068b44fa8ac"
   enforcement_level = "advisory"
 }
 
-policy "intel-google-container-node-pool-deny-unapproved-instance-types" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-container-node-pool-deny-unapproved-instance-types.sentinel?checksum=sha256:b7d45975c1dfb0031d12d0c0b5db102f18e47bd8941dd57322a991279e27ead3"
-  enforcement_level = "advisory"
+module "report" {
+  source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-CloudTrail-Terraform/1.0.1/policy-module/report.sentinel?checksum=sha256:e8422be2bf132524ef264934609cbfbf4846e77936003448a69747330fcfe9ba"
 }
 
-policy "intel-google-container-cluster-deny-unapproved-instance-types" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-container-cluster-deny-unapproved-instance-types.sentinel?checksum=sha256:b8960dcb14cd1c46106a6799a25246b32fff45e4c76fe7b840b8f9420663da6d"
-  enforcement_level = "advisory"
-}
-
-policy "intel-google-compute-instance-template-enforce-min-cpu-platform" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-template-enforce-min-cpu-platform.sentinel?checksum=sha256:ac8074f30703c3389d9d9c6d1d8847a841f68dda2e8640136d385714b0e28f15"
-  enforcement_level = "advisory"
-}
-
-policy "intel-google-compute-instance-template-deny-unapproved-instance-types" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy/intel-google-compute-instance-template-deny-unapproved-instance-types.sentinel?checksum=sha256:c864b73f5e7cfa97bc64f49a34d9843d57e9b26216994a1654ccb29d290e8ac2"
-  enforcement_level = "advisory"
-}
-
-module "policy_summary" {
-  source = "https://registry.terraform.io/v2/policies/intel/intel-gcp/3.0.3/policy-module/policy_summary.sentinel?checksum=sha256:765fceb369ae13ddea5650576fe5fea48b0c229f9ed1cdb8a7d7ff90309e0a07"
+module "tfresources" {
+  source = "https://registry.terraform.io/v2/policies/hashicorp/CIS-Policy-Set-for-AWS-CloudTrail-Terraform/1.0.1/policy-module/tfresources.sentinel?checksum=sha256:54edaac2a209f55d117f92291baae78d400fd47d94336e614f2cadf6b38bea99"
 }
